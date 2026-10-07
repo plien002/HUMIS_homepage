@@ -1,0 +1,28 @@
+
+:root{
+    --histdeptgreen: #505a2f;
+    --backgroundgreen: #292827;
+}
+
+
+body {
+    background-color: var(--backgroundgreen);
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+
+    section.container {
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        justify-content: space-between;
+        max-width: 780px;
+
+        header {
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
