@@ -1,27 +1,120 @@
-
 :root{
     --histdeptgreen: #505a2f;
-    --backgroundgreen: #292827;
+    --green-light: #b4b697;
+    --gray-light: #f2f1f0;
 }
 
-
+/* Mobile first */
 body {
-    background-color: var(--backgroundgreen);
-    font-family: Arial, Helvetica, sans-serif;
+    background-color: #282726;
     display: flex;
     justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
 
     section.container {
-        background-color: #fff;
+        background-color: white;
         display: flex;
         flex-direction: column;
-        min-height: 100vh;
+        min-height: 70vh;
         justify-content: space-between;
         max-width: 780px;
 
         header {
             img {
                 width: 100%;
+            }
+        }
+
+        section.middle {
+            display: flex;
+            flex-direction: column;
+            border: 10px solid red;
+            height: 100%;
+            justify-content: space-between;
+
+            nav.drop-down-menu {
+                /*display: none;*/
+            }
+            nav.minor {
+                border: 10px solid orange;
+                display: flex;
+                justify-content: center;
+                font-size: 10px;
+
+                    a {
+                        color: black;
+                        border-right: 1px solid black;
+                        padding-right: 5px;
+                        margin-right: 5px;
+                        text-decoration: none;
+
+                        &:hover {
+                            text-decoration: underline;
+                        }
+
+                        img {
+                            vertical-align: middle;
+                        }
+
+                        &:last-of-type {
+                            border-right: none;
+                        }
+                    }
+
+            }
+        }
+
+        footer {
+            color: white;
+            background-color: var(--histdeptgreen);
+            text-align: center;
+            padding: 10px;
+            font-size: 10px;
+        }
+
+
+        /* Tablet and up overrides */
+        @media screen and (width >= 600px) {
+            section.middle {
+                nav.drop-down-menu {
+                    display: flex;
+
+                    div.left-side {
+                        width: 30%;
+                        border-right: 2px solid var(--green-light);
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+
+                        nav.left-nav {
+                            margin 20px 10px 0;
+                            border: 10px solid blue;
+
+                            a{
+                                display: block;
+                                text-transform: uppercase;
+                                font-size: 10px;
+                                color: var(--histdeptgreen);
+                                border-bottom: 2px solid var(--histdeptgreen);
+                                text-decoration: none;
+                                padding: 10px 0 10px 10px;
+
+                                &:hover {
+                                    background-color: var(--histdeptgreen);
+
+                                }
+                            }
+                        }
+                    }
+                }
+
+                section.inner {
+                    width: 70%;
+
+                    nav.drop-down-menu {
+
+                    }
+                }
             }
         }
     }
