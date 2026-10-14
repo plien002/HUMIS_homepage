@@ -1,5 +1,6 @@
 :root{
     --histdeptgreen: #505a2f;
+    --black: #000;
     --green-light: #b4b697;
     --gray-light: #f2f1f0;
 }
@@ -26,23 +27,31 @@ body {
         }
 
         section.middle {
+            height: 100%;
             display: flex;
             flex-direction: column;
-            border: 10px solid red;
-            height: 100%;
-            justify-content: space-between;
 
-            nav.drop-down-menu {
-                /*display: none;*/
+            div.left-side {
+                display: none;
             }
-            nav.minor {
-                border: 10px solid orange;
+
+            section.inner {
                 display: flex;
-                justify-content: center;
-                font-size: 10px;
+                flex-direction: column;
+                justify-content: space-between;
+                height: 100%;
+
+                nav.drop-down-menu {
+                    /*display: none;*/
+                }
+
+                nav.minor {
+                    display: flex;
+                    justify-content: center;
+                    font-size: 10px;
 
                     a {
-                        color: black;
+                        color: var(--black);
                         border-right: 1px solid black;
                         padding-right: 5px;
                         margin-right: 5px;
@@ -60,7 +69,11 @@ body {
                             border-right: none;
                         }
                     }
+                }
 
+                main {
+                    padding: 30px;
+                }
             }
         }
 
@@ -76,33 +89,31 @@ body {
         /* Tablet and up overrides */
         @media screen and (width >= 600px) {
             section.middle {
-                nav.drop-down-menu {
+                flex-direction: row;
+
+                div.left-side {
                     display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    width: 30%;
+                    background-color: var(--gray-light);
+                    border-right: 2px solid var(--green-light);
 
-                    div.left-side {
-                        width: 30%;
-                        border-right: 2px solid var(--green-light);
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: space-between;
+                    nav.left-nav {
+                        margin: 20px 10px 0;
 
-                        nav.left-nav {
-                            margin 20px 10px 0;
-                            border: 10px solid blue;
+                        a {
+                            display: block;
+                            text-transform: uppercase;
+                            font-size: 10px;
+                            color: var(--black);
+                            border-bottom: 2px solid var(--histdeptgreen);
+                            text-decoration: none;
+                            padding: 10px 0 10px 10px;
 
-                            a{
-                                display: block;
-                                text-transform: uppercase;
-                                font-size: 10px;
-                                color: var(--histdeptgreen);
-                                border-bottom: 2px solid var(--histdeptgreen);
-                                text-decoration: none;
-                                padding: 10px 0 10px 10px;
-
-                                &:hover {
-                                    background-color: var(--histdeptgreen);
-
-                                }
+                            &:hover {
+                                background-color: var(--histdeptgreen);
+                                color: #fff;
                             }
                         }
                     }
@@ -112,7 +123,11 @@ body {
                     width: 70%;
 
                     nav.drop-down-menu {
+                        display: none;
+                    }
 
+                    nav.minor {
+                        justify-content: flex-end;
                     }
                 }
             }
