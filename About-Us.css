@@ -23,6 +23,7 @@ body {
         header {
             img {
                 width: 100%;
+                display: block;
             }
         }
 
@@ -42,13 +43,25 @@ body {
                 height: 100%;
 
                 nav.drop-down-menu {
-                    /*display: none;*/
+                    display: flex;
+                    gap: 20px;
+                    justify-content: center;
+                    background-color: var(--green-light);
+                    padding: 20px 10px;
+                    order: -1;
+
+                    label {
+                        select {
+                            width: 100%;
+                        }
+                    }
                 }
 
                 nav.minor {
                     display: flex;
                     justify-content: center;
                     font-size: 10px;
+                    align-items: center;
 
                     a {
                         color: var(--black);
@@ -68,6 +81,22 @@ body {
                         &:last-of-type {
                             border-right: none;
                         }
+                    }
+
+                    &.top {
+                        text-transform: uppercase;
+                        font-weight: bold;
+                        font-size: 12px;
+                        margin: 5px;
+                        order: -2;
+                        justify-content: center;
+                    }
+
+                    &.bottom {
+                        font-weight: bold;
+                        font-size: 12px;
+                        margin: 5px;
+                        justify-content: center;
                     }
                 }
 
@@ -98,14 +127,16 @@ body {
                     width: 30%;
                     background-color: var(--gray-light);
                     border-right: 2px solid var(--green-light);
+                    padding: 10px;
 
                     nav.left-nav {
-                        margin: 20px 10px 0;
+                        margin: 20px 20px 0;
 
                         a {
                             display: block;
                             text-transform: uppercase;
-                            font-size: 10px;
+                            font-size: 12px;
+                            font-weight: bold;
                             color: var(--black);
                             border-bottom: 2px solid var(--histdeptgreen);
                             text-decoration: none;
@@ -116,6 +147,14 @@ body {
                                 color: #fff;
                             }
                         }
+                    }
+
+                    div.login-links {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        width: 100%;
+                        gap: 10px;
                     }
                 }
 
@@ -128,6 +167,7 @@ body {
 
                     nav.minor {
                         justify-content: flex-end;
+                        padding: 5px;
                     }
                 }
             }
