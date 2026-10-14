@@ -1,0 +1,17 @@
+h4, p {
+    margin: 0;
+}
+
+h4 {
+    /*border: 10px solid red;*/
+}
+
+p {
+    /*border: 10px solid blue;*/
+}
+
+.linear-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
