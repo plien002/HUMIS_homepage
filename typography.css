@@ -15,3 +15,12 @@ p {
     flex-direction: column;
     gap: 30px;
 }
+
+main.linear-copy {
+    h1 {
+        border-top: 2px solid var(--histdeptgreen);
+        color: var(--maroon);
+        text-transform: uppercase;
+        padding-top: 20px;
+    }
+}

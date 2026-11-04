@@ -3,6 +3,7 @@
     --black: #000;
     --green-light: #b4b697;
     --gray-light: #f2f1f0;
+    --maroon: #a12d37;
 }
 
 /* Mobile first */
@@ -16,7 +17,6 @@ body {
         background-color: white;
         display: flex;
         flex-direction: column;
-        min-height: 70vh;
         justify-content: space-between;
         max-width: 780px;
 
@@ -28,7 +28,6 @@ body {
         }
 
         section.middle {
-            height: 100%;
             display: flex;
             flex-direction: column;
 
@@ -40,19 +39,51 @@ body {
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
-                height: 100%;
 
                 nav.drop-down-menu {
                     display: flex;
                     gap: 20px;
                     justify-content: center;
-                    background-color: var(--green-light);
+                    background-color: var(--gray-light);
                     padding: 20px 10px;
                     order: -1;
 
                     label {
+                        display: flex;
+
                         select {
                             width: 100%;
+                        }
+                    }
+                }
+
+                nav.contact {
+                    display: flex;
+                    justify-content: left;
+                    align-items: center;
+                    font-size: 10px;
+                    margin-left: 25px;
+
+                    a {
+
+                        color: var(--maroon);
+                        margin-top: 10px;
+                        margin-bottom: -70px;
+                        text-transform: uppercase;
+                        text-decoration: none;
+                        border-right: 1px solid var(--maroon);
+                        padding-right: 5px;
+                        padding-left: 5px;
+
+                        &:last-of-type {
+                            border-right: none;
+                        }
+
+                        /*border-bottom: 2px solid var(--histdeptgreen); */
+
+                        &:hover {
+                            text-decoration: underline;
+                            color: black;
                         }
                     }
                 }
@@ -65,7 +96,7 @@ body {
 
                     a {
                         color: var(--black);
-                        border-right: 1px solid black;
+                        border-right: 2px solid black;
                         padding-right: 5px;
                         margin-right: 5px;
                         text-decoration: none;
@@ -80,6 +111,9 @@ body {
 
                         &:last-of-type {
                             border-right: none;
+                        }
+                        &.active {
+                            text-decoration: underline;
                         }
                     }
 
@@ -96,7 +130,7 @@ body {
                         font-weight: bold;
                         font-size: 12px;
                         margin: 5px;
-                        justify-content: center;
+                        justify-content: Right;
                     }
                 }
 
@@ -137,10 +171,10 @@ body {
                             text-transform: uppercase;
                             font-size: 12px;
                             font-weight: bold;
-                            color: var(--black);
+                            color: var(--histdeptgreen);
                             border-bottom: 2px solid var(--histdeptgreen);
                             text-decoration: none;
-                            padding: 10px 0 10px 10px;
+                            padding: 10px 10px 10px 10px;
 
                             &:hover {
                                 background-color: var(--histdeptgreen);
@@ -159,7 +193,8 @@ body {
                 }
 
                 section.inner {
-                    width: 70%;
+                    float: right;
+                    width: 65%;
 
                     nav.drop-down-menu {
                         display: none;
